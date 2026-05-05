@@ -21,7 +21,7 @@ public class RecipeServices {
         recipe.setIngredients(request.getIngredients());
         recipe.setPrepTime(request.getPrepTime());
         recipe.setCategory(request.getCategory());
-        recipe.setUserID(userId);
+        recipe.setUserId(userId);
         return recipeRepository.save(recipe);
     }
 
@@ -33,7 +33,7 @@ public class RecipeServices {
         Recipe recipe  = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found"));
 
-        if (!recipe.getUserID().equals(userId)) {
+        if (!recipe.getUserId().equals(userId)) {
             throw new RuntimeException("Forbidden- ");
         }
         return recipe;
@@ -43,7 +43,7 @@ public class RecipeServices {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found"));
 
-        if (!recipe.getUserID().equals(userId)) {
+        if (!recipe.getUserId().equals(userId)) {
             throw new RuntimeException("Forbidden");
         }
 
@@ -60,7 +60,7 @@ public class RecipeServices {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found"));
 
-        if (!recipe.getUserID().equals(userId)) {
+        if (!recipe.getUserId().equals(userId)) {
             throw new RuntimeException("Forbidden");
         }
 
