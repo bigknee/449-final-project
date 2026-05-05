@@ -18,6 +18,6 @@ public class Recipe {
     private int prepTime;
     private String category;
 
-    private String userID; //many to many relationship: user owns many recipes
+    private String userId; //many to many relationship: user owns many recipes
 
 }
